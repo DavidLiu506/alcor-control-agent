@@ -350,7 +350,7 @@ void Aca_Goal_State_Handler::add_goal_state_operation_status(
 
   // -----critical section starts-----
   // (exclusive write access to gsOperationReply signaled by locking gs_reply_mutex):
-  gs_reply_mutex.lock();
+  //gs_reply_mutex.lock();
   GoalStateOperationReply_GoalStateOperationStatus *new_operation_statuses =
           gsOperationReply.add_operation_statuses();
   new_operation_statuses->set_resource_id(id);
@@ -360,7 +360,7 @@ void Aca_Goal_State_Handler::add_goal_state_operation_status(
   new_operation_statuses->set_dataplane_programming_time(culminative_dataplane_programming_time);
   new_operation_statuses->set_network_configuration_time(culminative_network_configuration_time);
   new_operation_statuses->set_state_elapse_time(state_elapse_time);
-  gs_reply_mutex.unlock();
+  //gs_reply_mutex.unlock();
   // -----critical section ends-----
 }
 
